@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+Here's a complete `README.md` file tailored for your **React Weather Dashboard** project. You can copy-paste this into your project's root directory.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+```markdown
+# 🌤️ Weather Dashboard Web App
 
-In the project directory, you can run:
+A responsive and interactive Weather Dashboard built with **React.js** and styled using **Material UI (MUI)**. It allows users to search any city and view current weather details, a 5-day forecast, and more, all fetched from the OpenWeatherMap API.
 
-### `npm start`
+## 🔧 Tech Stack Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ⚛️ **React.js** – Frontend framework (Create React App)
+- 🎨 **MUI (Material-UI)** – Component library for modern UI
+- ⚙️ **Axios** – For HTTP requests
+- 🌐 **OpenWeatherMap API** – For weather data
+- 🌗 **Dark/Light Theme Toggle** – Built using MUI theming
+- 🎞️ **Framer Motion / CSS** – For animations and transitions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧑‍💻 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🔍 City search with live weather updates
+- ☀️ Current temperature, condition, humidity & wind speed
+- 🌤️ 5-Day / 3-Hour Forecast
+- 🌓 Theme toggle (Dark / Light Mode)
+- 🔄 Refresh current weather
+- 🕘 Search history (last 5 searches)
+- ⏳ Loading spinner and error handling
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Live Demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Check the live version: https://weather-dashboard-two-omega.vercel.app/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Local Setup Instructions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone the repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/your-username/weather-dashboard.git
+cd weather-dashboard
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Install dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### 3. Add OpenWeatherMap API Key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a `.env` file in the root of the project:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```env
+REACT_APP_OPENWEATHER_API_KEY=your_api_key_here
+```
 
-### Code Splitting
+> ✅ Replace `your_api_key_here` with your actual key from OpenWeatherMap.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 4. Start development server
 
-### Analyzing the Bundle Size
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🌐 OpenWeatherMap API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Current Weather API**  
+  Endpoint: `https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={API_KEY}`
 
-### Advanced Configuration
+- **5-Day Forecast API**  
+  Endpoint: `https://api.openweathermap.org/data/2.5/forecast?q={city}&units=metric&appid={API_KEY}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Response Format**: JSON  
+- **Units**: Metric (°C, km/h)  
+- **Rate Limit** (Free tier):
+  - 60 calls/minute
+  - 1,000,000 calls/month
 
-### Deployment
+### 🔐 API Key Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- API key is stored securely via environment variables (`.env`)
+- Do not share your API key publicly (keep `.env` out of Git)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📁 Folder Structure
+
+```
+weather-dashboard/
+│
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── SearchBar.js
+│   │   ├── WeatherCard.js
+│   │   ├── ForecastCard.js
+│   │   └── ThemeToggle.js
+│   ├── api.js
+│   ├── App.js
+│   ├── index.js
+│   └── App.css
+├── .env
+├── README.md
+└── package.json
+`
+
+## 📦 Deployment
+
+App is deployed using **Vercel**:
+
+1. Push your code to GitHub
+2. Connect to Vercel
+3. Add environment variables in settings
+4. Deploy and get your live URL!
+
+---
+
+## 📬 Contact
+
+For questions or contributions, feel free to reach out:
+
+**Madhusmita Sahoo**  
+
+---
+
+> 💡 Feel free to fork, star ⭐, or contribute via pull reques
